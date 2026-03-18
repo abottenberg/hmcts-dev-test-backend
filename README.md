@@ -8,3 +8,12 @@ can run the service in IntelliJ (or your IDE of choice) or however you normally 
 
 There is an example endpoint provided to retrieve an example of a case. You are free to add/remove fields as you
 wish.
+
+Running the DB
+docker run --name postgres-cases \
+-e POSTGRES_DB=casesdb \
+-e POSTGRES_USER=postgres \
+-e POSTGRES_PASSWORD=postgres \
+-p 5432:5432 \
+-d postgres
+

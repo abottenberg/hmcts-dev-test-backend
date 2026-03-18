@@ -1,22 +1,30 @@
 package uk.gov.hmcts.reform.dev.models;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import jakarta.persistence.Entity;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class ExampleCase {
+@Entity
+@Table(name = "task")
+public class Task {
 
+    @Id
+    @GeneratedValue
     private int id;
-    private String caseNumber;
     private String title;
     private String description;
-    private String status;
+    private String status = "TODO";
     private LocalDateTime createdDate;
+    private LocalDateTime dueDate;
 }
